@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina_Generale</title>
+</head>
+<body>
+    {% if request.user.is_authenticated%}
+    <h3>Pagina_Generale</h3>
+    <br>
+    <p>Ciao {{ name }} siete entrati nell sito</p>
+    <fieldset>
+        <legend>Profilo</legend>
+        <label for="uscire">Clicca per entrare nel Profilo: </label>
+        <a href="profilo/"><button>Clicca</button></a>
+    </fieldset>
+    {% else %}
+    <h3>Pagina_Generale</h3>
+    <fieldset>
+        <legend>Registrazione</legend>
+        <label for="registrazione_button">Cliccare il pulsante per entrare nella pagina della Registrazione: </label>
+        <a href="/registrazione"><button>Clicca</button></a>
+    </fieldset>
+    <br>
+    <fieldset>
+        <legend>Accessso</legend>
+        <label for="registrazione_button">Cliccare il pulsante per entrare nella Pagina di Accesso: </label>
+        <a href="/accesso"><button>Clicca</button></a>
+    </fieldset>
+    {{text}}
+    {% endif %}
+</body>
+</html>
